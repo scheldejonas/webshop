@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="layout :: head('Upload')"></head>
+
+<body>
+<div th:replace="layout :: nav"></div>
+<div th:replace="layout :: flash"></div>
+<div class="divider"></div>
+<div class="cupcakes container">
+    <div class="row">
+
+        <div th:each="cupcake : ${cupcakes}" class="col s12 m6 l4">
+            <div class="card hoverable">
+                <a th:href="@{|/cupcake/${cupcake.id}|}" class="actions">
+                    <div class="card-image waves-block waves-light">
+                        <img th:src="@{|/cupcake/topping/${cupcake.id}.png|}" alt="cupcake topping image" />
+                        <span th:text="${cupcake.topping.name}" class="card-title">Card Title</span>
+                        <!-- TODO: make favorite to add to cart button and make number changeable in cart
+                        <form th:action="@{|/cupcakes/${cupcake.id}/favorite|}" method="post">
+                            <button type="submit" th:class="(${cupcake.favorite}? 'un' : '') + 'mark favorite'"></button>
+                        </form>
+                        -->
+                    </div>
+                </a>
+                <div class="card-content activator" th:style="|background-color:${cupcake.bottom.colorCode}|">
+                    <span class="card-title activator">
+                        <span class="card-cupcake-price activator" th:text="|$${cupcake.price}|">100</span>
+                        <span class="card-cupcake-bottom-title activator" th:text="|${cupcake.bottom.name}|">Bottom Title</span>
+                        <i class="material-icons right activator">more_vert</i>
+                    </span>
+                </div>
+                <div class="card-reveal" th:style="|background-color:${cupcake.bottom.colorCode}|">
+                    <span class="card-title">
+                        <span th:text="${cupcake.bottom.name}">Bottom Title</span>
+                        <i class="card-close-reveal-icon material-icons right">close</i>
+                        <img th:src="@{|/cupcake/bottom/${cupcake.id}.png|}" alt="cupcake bottom image" />
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div th:replace="layout :: scripts"></div>
+</body>
+</html>

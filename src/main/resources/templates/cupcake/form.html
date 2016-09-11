@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+
+<head th:replace="layout :: head('Upload')"></head>
+
+<body>
+<div th:replace="layout :: nav"></div>
+
+<div class="container upload">
+    <div class="row">
+        <div class="col s12">
+            <h2 th:text="${heading}">Upload</h2>
+            <div class="subtitle">Upload your new Cup Cakes for the whole world to order and pick them up, at your shop.</div>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div th:replace="layout :: flash"></div>
+    <form th:action="@{${action}}" method="post" th:object="${cupcake}" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="row">
+                    <div class="col s12">
+                        <input type="text" th:field="*{topping.name}" placeholder="Topping name" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <div class="file-wrapper">
+                            <input type="file" id="toppingfile" name="toppingfile" />
+                            <span class="placeholder" data-placeholder="Choose an image...">Choose an image...</span>
+                            <label for="toppingfile" class="button">Browse</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12" th:classappend="${#fields.hasErrors('topping.colorCode')} ? 'error' : ''">
+                        <select th:field="*{topping.colorCode}" class="cs-select cs-skin-border">
+                            <option value="" disabled="disabled">Bottom Color</option>
+                            <option th:each="color : ${colors}" th:value="${color.hexCode}" th:text="${color.name}" th:style="|color:${color.hexCode}|">Aqua</option>
+                        </select>
+                        <div th:if="${#fields.hasErrors('topping.colorCode')}" th:errors="*{topping.colorCode}"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6">
+                <div class="row">
+                    <div class="col s12">
+                        <input type="text" th:field="*{bottom.name}" placeholder="Bottom name" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <div class="file-wrapper">
+                            <input type="file" id="bottomfile" name="bottomfile" />
+                            <span class="placeholder" data-placeholder="Choose an image...">Choose an image...</span>
+                            <label for="bottomfile" class="button">Browse</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12" th:classappend="${#fields.hasErrors('bottom.colorCode')} ? 'error' : ''">
+                        <select th:field="*{bottom.colorCode}" class="cs-select cs-skin-border">
+                            <option value="" disabled="disabled">Bottom Color</option>
+                            <option th:each="color : ${colors}" th:value="${color.hexCode}" th:text="${color.name}" th:style="|color:${color.hexCode}|">Aqua</option>
+                        </select>
+                        <div th:if="${#fields.hasErrors('bottom.colorCode')}" th:errors="*{bottom.colorCode}"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="cupcake-form-money-icon-div" class="col s1 offset-s3">
+                <i class="medium material-icons">attach_money</i>
+            </div>
+            <div class="col s4">
+                <input id="price" type="text" th:field="*{price}"/>
+            </div>
+            <div class="col s4">
+                <button th:text="${submit}" type="submit" class="button">Upload</button>
+                <a href="javascript:window.location = document.referrer;" class="button">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div th:replace="layout :: scripts"></div>
+</body>
+
+</html>
