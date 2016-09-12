@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head th:replace="layout :: head('Upload')"></head>
 
@@ -27,10 +27,13 @@
         </div>
     </div>
     <div class="row">
-        <div id="cupcake-quantity-icon-div" class="col s1 offset-s3">
+        <div id="cupcake-details-price-div" class="col s1">
+            <h4 class="" th:text="|$${cupcake.price}|">$100</h4>
+        </div>
+        <div id="cupcake-quantity-icon-div" class="col s1 offset-s1">
             <i class="medium material-icons">add_shopping_cart</i>
         </div>
-        <form action="/cart" method="post" th:object="${cartline}">
+        <form th:action="|/cart/add/${cupcake.id}|" method="post" th:object="${cartline}">
             <div class="col s4">
                 <input id="quantity" type="text" th:field="*{quantity}"/>
             </div>

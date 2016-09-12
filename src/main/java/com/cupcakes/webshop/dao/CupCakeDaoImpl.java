@@ -48,7 +48,7 @@ public class CupCakeDaoImpl implements CupCakeDao {
 
         session.beginTransaction();
 
-        session.save(cupCake);
+        session.saveOrUpdate(cupCake);
 
         session.getTransaction().commit();
 

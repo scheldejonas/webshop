@@ -98,18 +98,19 @@ public class CupCakeController {
 
         // Add cupcake to the html Thymeleaf engine, to be rendered
         model.addAttribute("cupcake",cupCake);
+        model.addAttribute("cartline",new CartLine());
 
         return "cupcake/details";
     }
 
-    @RequestMapping(value = "/cart/add", method = RequestMethod.POST)
-    public String addCupCakeToCart(CartLine cartLine, CupCake cupCake, RedirectAttributes redirectAttributes) {
+    @RequestMapping(value = "/cart/add/{cupCakeId}", method = RequestMethod.POST)
+    public String addCupCakeToCart(CartLine cartLine, @PathVariable Long cupCakeId, RedirectAttributes redirectAttributes) {
 
         // Send the info to CartLine Service, responsible for make a new Order or adding to existing open order
-        cartLineService.save(cartLine,cupCake);
+        cartLineService.save(cartLine,cupCakeId);
 
         // Add succes message to the top of the page
-        redirectAttributes.addFlashAttribute("flash", new FlashMessage("You have succesfully added " + cartLine.getQuantity() + " " + cupCake.getTopping().getName() + "/" + cupCake.getBottom().getName() + "Cup Cakes to the cart", FlashMessage.Status.SUCCES));
+        redirectAttributes.addFlashAttribute("flash", new FlashMessage("You have succesfully added " + cartLine.getQuantity() + " Cup Cakes to the cart", FlashMessage.Status.SUCCES));
 
         return "redirect:/";
     }

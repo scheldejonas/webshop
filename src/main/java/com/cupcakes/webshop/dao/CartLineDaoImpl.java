@@ -48,7 +48,7 @@ public class CartLineDaoImpl implements CartLineDao {
 
         session.beginTransaction();
 
-        session.save(cartLine);
+        session.saveOrUpdate(cartLine);
 
         session.getTransaction().commit();
 

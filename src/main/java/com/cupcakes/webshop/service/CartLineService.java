@@ -11,6 +11,6 @@ import java.util.List;
 public interface CartLineService {
     List<CartLine> findAll();
     CartLine findById(Long id);
-    void save(CartLine cartLine, CupCake cupCake);
+    void save(CartLine cartLine, Long cupCakeId);
     void delete(CartLine cartLine);
 }

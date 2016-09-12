@@ -1,6 +1,7 @@
 package com.cupcakes.webshop.service;
 
 import com.cupcakes.webshop.model.Cart;
+import com.cupcakes.webshop.model.User;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -11,6 +12,6 @@ import java.util.List;
 public interface CartService {
     List<Cart> findAll();
     Cart findById(Long id);
-    void save(Cart cart, MultipartFile multipartFile);
+    void save(Cart cart, User user);
     void delete(Cart cart);
 }

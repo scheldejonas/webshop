@@ -17,18 +17,18 @@ public class User {
     private String password;
     private int balance;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Cart> carts = new ArrayList<>();
 
     public User() {
     }
 
-    public User(Long id, String username, String password, int balance, List<Cart> carts) {
-        this.id = id;
+    public User(String username, String password, int balance, Cart cart) {
         this.username = username;
         this.password = password;
         this.balance = balance;
-        this.carts = carts;
+        this.carts = new ArrayList<>();
+        this.carts.add(cart);
     }
 
     public Long getId() {
@@ -69,5 +69,15 @@ public class User {
 
     public void setCarts(List<Cart> carts) {
         this.carts = carts;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", balance=" + balance +
+                '}';
     }
 }
