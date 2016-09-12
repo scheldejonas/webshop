@@ -41,43 +41,80 @@ public class CartLineServiceImpl implements  CartLineService {
     @Override
     public void save(CartLine cartLine, Long cupCakeId) {
 
-        // Get the requested Cup Cake
-        CupCake cupCake = cupCakeService.findById(cupCakeId);
-
-        // Save the cup cake to the Cart Line
-        cartLine.setCupCake(cupCake);
-
-        // Upgrade cart line number
         List<CartLine> cartLines = cartLineDao.findAll();
-        cartLine.setId( cartLineDao.findById( cartLines.get(cartLines.size()).getId() ) );
 
-        // Calculating the sum price of the cart line
-        cartLine.setSumPrice(cupCake.getPrice()*cartLine.getQuantity());
+        // If Cart Line with CupCake and Cart already exist, then update quantity and sum price
+        boolean isInDB = false;
 
-        // Create a new Cart and storing for later use in Cart Line Table
-        if (cartService.findAll().size() < 1) {
-        // TODO: remove this when authentication is built an tested working
-            Cart cart = new Cart();
+        for (CartLine cartLineTemp : cartLines) {
+            if (cupCakeId == (long)cartLineTemp.getCupCake().getId()) {
 
-            // TODO: make user authentication operate here with UserServiceImpl, in future
-            cartService.save(cart, new User("Jonas Schelde", "welcome", 800, cart) );
-            // TODO: if cart exist, then add to that instead of new
+                // TODO: BEFORE Changing cartline | check also same cart to present cart instead of Jonas Cart, after User Authentication is working
 
+                // Update existing Cart Line for the Cart with quantity and price | Update cart_id, no need
+                cartLineTemp.setQuantity( cartLineTemp.getQuantity() + cartLine.getQuantity() );
+                cartLineTemp.setSumPrice( cartLineTemp.getQuantity() * cartLineTemp.getCupCake().getPrice() );
+
+                cartLine = cartLineTemp;
+
+                // Saving cart line data
+                cartLineDao.save(cartLineTemp);
+
+                // Check for  that Cart Line was existing in Cart
+                isInDB = true;
+            }
         }
-        List<Cart> carts = cartService.findAll();
-        System.out.println( cartService.findById( carts.get(carts.size()-1).getId() ) );
 
-        // Ready the cart for storing with the existing cartline
-        Cart newCart = cartService.findById( carts.get(carts.size()-1).getId() );
-        newCart.getCartLines().add(cartLine);
-        cartLine.setCart(newCart);
+        // If Cartline with cupCake exist in DB, then update cart with cartline and totalprice
 
-        // Send the Cart Line to the data access object for storing in database
-        cartLineDao.save(cartLine);
+        /*
+        if (isInDB) {
+            Cart cart = cartService.findById( cartLine.getCart().getId() );
 
-        // Update the cart with connection to the new Cart Line in DB
-        cartService.save(newCart,newCart.getUser());
-        // TODO: change user to logged in user, when authentication is created and tested
+            for ( CartLine cartLineTempCart : cart.getCartLines() ) {
+                if (cartLineTempCart.getId() == cartLine.getId()) {
+                    cart.getCartLines()
+                }
+            };
+        }
+        */
+        /*
+        else {
+            // Get the requested Cup Cake
+            CupCake cupCake = cupCakeService.findById(cupCakeId);
+
+            // Save the cup cake to the Cart Line
+            cartLine.setCupCake(cupCake);
+
+
+            // Calculating the sum price of the cart line
+            cartLine.setSumPrice(cupCake.getPrice() * cartLine.getQuantity());
+
+            // Create a new Cart and storing for later use in Cart Line Table
+            if (cartService.findAll().size() < 1) {
+                // TODO: remove this when authentication is built an tested working
+                Cart cart = new Cart();
+
+                // TODO: make user authentication operate here with UserServiceImpl, in future
+                cartService.save(cart, new User("Jonas Schelde", "welcome", 800, cart));
+                // TODO: if cart exist, then add to that instead of new
+
+            }
+            List<Cart> carts = cartService.findAll();
+
+            // Ready the cart for storing with the existing cartline
+            Cart newCart = cartService.findById(carts.get(carts.size() - 1).getId());
+            newCart.getCartLines().add(cartLine);
+            cartLine.setCart(newCart);
+
+            // Send the Cart Line to the data access object for storing in database
+            cartLineDao.save(cartLine);
+
+            // Update the cart with connection to the new Cart Line in DB
+            cartService.save(newCart, newCart.getUser());
+            // TODO: change user to logged in user, when authentication is created and tested
+        }
+        */
     }
 
     @Override
