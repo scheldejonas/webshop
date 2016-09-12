@@ -47,6 +47,10 @@ public class CartLineServiceImpl implements  CartLineService {
         // Save the cup cake to the Cart Line
         cartLine.setCupCake(cupCake);
 
+        // Upgrade cart line number
+        List<CartLine> cartLines = cartLineDao.findAll();
+        cartLine.setId( cartLineDao.findById( cartLines.get(cartLines.size()).getId() ) );
+
         // Calculating the sum price of the cart line
         cartLine.setSumPrice(cupCake.getPrice()*cartLine.getQuantity());
 
@@ -68,7 +72,7 @@ public class CartLineServiceImpl implements  CartLineService {
         newCart.getCartLines().add(cartLine);
         cartLine.setCart(newCart);
 
-        // Send the Cart Line to the data acces object for storing in database
+        // Send the Cart Line to the data access object for storing in database
         cartLineDao.save(cartLine);
 
         // Update the cart with connection to the new Cart Line in DB

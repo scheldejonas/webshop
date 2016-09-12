@@ -18,10 +18,7 @@ repositories {
 }
 
 dependencies {
-    compile('org.springframework.boot:spring-boot-starter-thymeleaf') {
-        exclude module: 'spring-bot-starter-tomcat'
-    }
-    compile 'org.springframework.boot:spring-boot-starter-jetty'
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
     compile 'org.hashids:hashids:1.0.1'
     compile 'org.springframework:spring-orm:4.2.5.RELEASE'
     compile 'org.hibernate:hibernate-core:5.1.0.Final'
