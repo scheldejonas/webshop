@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5a61342-294e-4277-a543-40f529bda62d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/css/Icon&#13;" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/fonts/Icon&#13;" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/fonts/codropsicons/Icon&#13;" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/fonts/icomoon/Icon&#13;" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/js/Icon&#13;" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/css/Icon&#13;" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/Icon&#13;" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/js/Icon&#13;" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/cupcakes/webshop/dao/CartLineDaoImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/cupcakes/webshop/dao/CartLineDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/cupcakes/webshop/service/CartLineServiceImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/cupcakes/webshop/service/CartLineServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/webshop.mv.db" afterPath="$PROJECT_DIR$/data/webshop.mv.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/webshop_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/webshop_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cupcakes/webshop/dao/CartLineDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/cupcakes/webshop/dao/CartLineDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cupcakes/webshop/service/CartLineServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/cupcakes/webshop/service/CartLineServiceImpl.java" />
-    </list>
+    <list default="true" id="a5a61342-294e-4277-a543-40f529bda62d" name="Default" comment="" />
     <ignored path="webshop.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -142,7 +122,7 @@
       <file leaf-file-name="CartLineServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cupcakes/webshop/service/CartLineServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1290">
+            <state relative-caret-position="951">
               <caret line="90" column="31" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -154,7 +134,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/cupcake/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="180">
               <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="67" />
               <folding />
             </state>
@@ -174,7 +154,7 @@
       <file leaf-file-name="form.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/cupcake/form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
+            <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -184,7 +164,7 @@
       <file leaf-file-name="details.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/cupcake/details.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
+            <state relative-caret-position="525">
               <caret line="35" column="51" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="51" />
               <folding />
             </state>
@@ -194,7 +174,7 @@
       <file leaf-file-name="CartLineDaoImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cupcakes/webshop/dao/CartLineDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
+            <state relative-caret-position="450">
               <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
@@ -217,7 +197,7 @@
       <file leaf-file-name="CupCakeController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cupcakes/webshop/web/controller/CupCakeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
+            <state relative-caret-position="1380">
               <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
               <folding />
             </state>
@@ -237,7 +217,7 @@
       <file leaf-file-name="CartDaoImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cupcakes/webshop/dao/CartDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="657">
+            <state relative-caret-position="660">
               <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -660,8 +640,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -688,8 +668,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1112,7 +1093,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1655,11 +1635,12 @@
       <workItem from="1473666119524" duration="2400000" />
       <workItem from="1473672409539" duration="4438000" />
       <workItem from="1473678839302" duration="1180000" />
+      <workItem from="1473767276032" duration="5000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20324000" />
+    <option name="totallyTimeSpent" value="20329000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1671,8 +1652,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970297" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1688,10 +1669,10 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2739628" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2736954" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14449213" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14430244" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2072,7 +2053,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/cupcake/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="180">
           <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="67" />
           <folding />
         </state>
@@ -2080,7 +2061,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/cupcake/form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -2088,7 +2069,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/cupcake/details.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
+        <state relative-caret-position="525">
           <caret line="35" column="51" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="51" />
           <folding />
         </state>
@@ -2096,7 +2077,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cupcakes/webshop/web/controller/CupCakeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
+        <state relative-caret-position="1380">
           <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
           <folding />
         </state>
@@ -2112,7 +2093,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cupcakes/webshop/dao/CartDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
+        <state relative-caret-position="660">
           <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -2122,7 +2103,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cupcakes/webshop/dao/CartLineDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
+        <state relative-caret-position="450">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
@@ -2138,7 +2119,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cupcakes/webshop/service/CartLineServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
+        <state relative-caret-position="951">
           <caret line="90" column="31" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
