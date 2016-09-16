@@ -11,7 +11,7 @@ import org.springframework.core.env.Environment;
  * Created by scheldejonas on 10/09/16.
  */
 @Configuration
-@PropertySource("app.properties")
+@PropertySource("application.properties")
 public class AppConfig {
 
     @Autowired
