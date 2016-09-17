@@ -4,6 +4,7 @@ import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
@@ -33,6 +34,7 @@ public class DataConfig {
         return sessionFactory;
     }
 
+    /*
     @Bean
     public DataSource dataSource() {
         BasicDataSource basicDataSource = new BasicDataSource();
@@ -46,6 +48,19 @@ public class DataConfig {
         // Set username and password to db
         basicDataSource.setUsername(env.getProperty("webshop.db.username"));
         basicDataSource.setPassword(env.getProperty("webshop.db.password"));
+
+        return basicDataSource;
+    }
+    */
+
+    @Bean
+    public DataSource dataSource() {
+        BasicDataSource basicDataSource = new BasicDataSource();
+
+        basicDataSource.setDriverClassName(env.getProperty("webshop.db.mysql.driver"));
+        basicDataSource.setUrl(env.getProperty("webshop.db.mysql.url"));
+        basicDataSource.setUsername(env.getProperty("webshop.db.mysql.username"));
+        basicDataSource.setPassword(env.getProperty("webshop.db.mysql.password"));
 
         return basicDataSource;
     }
