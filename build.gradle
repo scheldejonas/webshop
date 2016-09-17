@@ -10,8 +10,19 @@ buildscript {
     }
 }
 
-apply plugin: 'spring-boot'
 apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'war'
+
+jar {
+    baseName = 'webshop'
+    version = '0.0.1.SNAPSHOT'
+}
+
+war {
+    baseName = 'webshop'
+    version = '0.0.1.SNAPSHOT'
+}
 
 repositories {
     mavenCentral()
@@ -20,6 +31,9 @@ repositories {
 dependencies {
     compile 'mysql:mysql-connector-java:5.1.33'
     compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+
     compile 'org.hashids:hashids:1.0.1'
     compile 'org.springframework:spring-orm:4.2.5.RELEASE'
     compile 'org.hibernate:hibernate-core:5.1.0.Final'
