@@ -14,13 +14,15 @@ public class CupCake {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Topping topping = new Topping();
+    @OneToOne
+    @JoinColumn(name = "topping_id")
+    private Topping topping;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Bottom bottom = new Bottom();
+    @OneToOne
+    @JoinColumn(name = "bottom_id")
+    private Bottom bottom;
 
-    @OneToMany(mappedBy = "cupCake", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cupCake")
     private List<CartLine> cartLines = new ArrayList<>();
     private int price;
     private String hash;

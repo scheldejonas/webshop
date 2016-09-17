@@ -17,7 +17,7 @@ public class User {
     private String password;
     private int balance;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user")
     private List<Cart> carts = new ArrayList<>();
 
     public User() {

@@ -9,6 +9,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 import javax.sql.DataSource;
@@ -33,28 +34,23 @@ public class DataConfig {
         sessionFactory.setDataSource(dataSource());
         return sessionFactory;
     }
-
-    /*
-    @Bean
+    @Bean(name = "dataSource")
+    @Profile("dev")
     public DataSource dataSource() {
         BasicDataSource basicDataSource = new BasicDataSource();
 
-        // Setting the driver for the database
-        basicDataSource.setDriverClassName(env.getProperty("webshop.db.driver"));
-
-        // Set database url
-        basicDataSource.setUrl(env.getProperty("webshop.db.url"));
-
-        // Set username and password to db
-        basicDataSource.setUsername(env.getProperty("webshop.db.username"));
-        basicDataSource.setPassword(env.getProperty("webshop.db.password"));
+        basicDataSource.setDriverClassName(env.getProperty("webshop.db.driver")); // Setting the driver for the database
+        basicDataSource.setUrl(env.getProperty("webshop.db.url")); // Set database url
+        basicDataSource.setUsername(env.getProperty("webshop.db.username")); // Set username to local h2 db
+        basicDataSource.setPassword(env.getProperty("webshop.db.password")); // Set password to local h2 db
 
         return basicDataSource;
     }
-    */
 
-    @Bean
-    public DataSource dataSource() {
+
+    @Bean(name = "dataSource")
+    @Profile("test")
+    public DataSource testDataSource() {
         BasicDataSource basicDataSource = new BasicDataSource();
 
         basicDataSource.setDriverClassName(env.getProperty("webshop.db.mysql.driver"));
@@ -63,6 +59,12 @@ public class DataConfig {
         basicDataSource.setPassword(env.getProperty("webshop.db.mysql.password"));
 
         return basicDataSource;
+    }
+
+    @Bean(name = "dataSource")
+    @Profile("prod")
+    public DataSource prodDataSource() {
+        return new JndiDataSourceLookup().getDataSource(env.getProperty("webshop.db.mysql.jndi"));
     }
 
     private Properties getHibernateProperties() {
