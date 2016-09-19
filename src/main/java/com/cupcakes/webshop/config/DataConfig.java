@@ -19,7 +19,7 @@ import java.util.Properties;
  * Created by scheldejonas on 10/09/16.
  */
 @Configuration
-@PropertySource("application.properties")
+@PropertySource("classpath:app.properties")
 public class DataConfig {
 
     @Autowired
@@ -64,9 +64,10 @@ public class DataConfig {
     @Bean(name = "dataSource")
     @Profile("prod")
     public DataSource prodDataSource() {
-        return new JndiDataSourceLookup().getDataSource(env.getProperty("webshop.db.mysql.jndi"));
+        return new JndiDataSourceLookup().getDataSource(env.getProperty("webshop.jndi"));
     }
 
+    /*
     private Properties getHibernateProperties() {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
@@ -76,5 +77,6 @@ public class DataConfig {
         properties.put("hibetnate.hbm2dll.auto", env.getProperty("hibernate.hbm2dll.auto"));
         return properties;
     }
+    */
 
 }
