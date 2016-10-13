@@ -15,12 +15,14 @@ public class CupCake {
     private Long id;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "topping_id")
     private Topping topping = new Topping();
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "bottom_id")
     private Bottom bottom = new Bottom();
 
-    @OneToMany(mappedBy = "cupCake", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cupCake")
     private List<CartLine> cartLines = new ArrayList<>();
     private int price;
     private String hash;
